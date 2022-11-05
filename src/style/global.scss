@@ -1,0 +1,76 @@
+html {
+  overflow-y: auto !important;
+}
+
+* {
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color: #dddddd;
+    border-radius: 10px;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 10px;
+  }
+  ::selection {
+    background-color: #6200ee;
+    color: #ffffff;
+  }
+}
+
+.loading-page {
+  width: 100vw;
+  height: 100vh;
+  background-color: #633bd3;
+  .loading-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    .loading-circle {
+      width: 16px;
+      height: 16px;
+      border-radius: 50%;
+      background-color: #ffffff;
+      transform: translate(-600px);
+      opacity: 0;
+      animation: slide 2.2s ease-in-out infinite;
+    }
+    .loading-circle:not(:last-child) {
+      margin-right: 20px;
+    }
+    .circle-4 {
+      animation-delay: .8s;
+    }
+    .circle-5 {
+      animation-delay: .6s;
+    }
+    .circle-6 {
+      animation-delay: .4s;
+    }
+    .circle-7 {
+      animation-delay: .2s;
+    }
+  }
+}
+
+@keyframes slide {
+  0% {
+    transform: translateX(-600px);
+    opacity: 0;
+  }
+  30% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  60% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(600px);
+    opacity: 0;
+  }
+}

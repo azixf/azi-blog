@@ -32,6 +32,7 @@ const router: Router = createRouter({
 
 router.beforeEach((to, from, next) => {
   NProgress.set(0.2)
+  document.title = to?.meta?.title ? `${to.meta.title} - AZI` : 'AZI'
   next()
 })
 
